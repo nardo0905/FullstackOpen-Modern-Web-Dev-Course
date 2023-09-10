@@ -1,8 +1,8 @@
-const RenderPerson = ({ name, phone }) => {
+const RenderPerson = ({ name, phone, id, handleDelete }) => {
   return (
     <tr key={name}>
       <td key={name}>
-        {name} {phone}
+        {name} {phone} <button onClick={() => handleDelete(id)}>delete</button>
       </td>
     </tr>
   );

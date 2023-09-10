@@ -1,6 +1,6 @@
 import RenderPerson from "./RenderPerson";
 
-const RenderPhoneBook = ({ persons, filter }) => {
+const RenderPhoneBook = ({ persons, filter, deleteFunc }) => {
   const filterPeople = () => {
     return persons.filter((person) =>
       person.name.toLowerCase().includes(filter)
@@ -14,7 +14,9 @@ const RenderPhoneBook = ({ persons, filter }) => {
           <RenderPerson
             key={person.id}
             name={person.name}
-            phone={person.phone}
+            phone={person.number}
+            id={person.id}
+            handleDelete={deleteFunc}
           ></RenderPerson>
         ))}
       </tbody>
